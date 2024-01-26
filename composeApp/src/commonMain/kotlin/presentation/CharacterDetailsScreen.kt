@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -21,7 +22,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -43,6 +47,7 @@ data class CharacterDetailsScreen(
         Scaffold(
             topBar = {
                 TopAppBar(
+                    backgroundColor = Color.White,
                     content = {
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
@@ -69,23 +74,43 @@ data class CharacterDetailsScreen(
                 Modifier.fillMaxSize()
                     .imePadding()
                     .padding(it)
-                    .padding(horizontal = 16.dp, vertical = 20.dp)
+                    .padding(horizontal = 16.dp, vertical = 20.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 KamelImage(
                     resource = asyncPainterResource(narutoCharacter.photoUrl),
-                    contentDescription = narutoCharacter.name,
+                    contentDescription = null,
                     contentScale = ContentScale.Crop,
-                    modifier = Modifier.size(110.dp).clip(RoundedCornerShape(10.dp)),
+                    modifier = Modifier.size(250.dp).clip(RoundedCornerShape(10.dp)),
                 )
 
                 Spacer(Modifier.height(10.dp))
 
                 Text(
                     text = narutoCharacter.name,
-                    fontSize = 16.sp
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.ExtraBold
                 )
 
                 Spacer(Modifier.height(10.dp))
+
+                Row {
+                    Text(
+                        text = "Abilities:",
+                        fontSize = 18.sp,
+                        fontStyle = FontStyle.Normal
+                    )
+
+                    Spacer(Modifier.width(5.dp))
+
+                    Text(
+                        text = narutoCharacter.ability,
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Normal
+                    )
+                }
+
+                Spacer(Modifier.height(20.dp))
 
                 Text(
                     text = narutoCharacter.description,
