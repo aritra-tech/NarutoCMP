@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
-import model.Characters
+import data.model.Characters
 
 @Composable
 fun CharacterCard(

@@ -1,7 +1,6 @@
 package viewmodel
 
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
-import extension.runIO
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -11,7 +10,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import model.Naruto
+import data.model.Naruto
 
 class NarutoViewModel : ViewModel() {
 
@@ -40,3 +39,7 @@ class NarutoViewModel : ViewModel() {
             .body<Naruto>()
     }
 }
+
+data class NarutoUiState(
+    val naruto : Naruto = Naruto(emptyList())
+)

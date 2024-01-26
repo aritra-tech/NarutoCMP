@@ -1,4 +1,4 @@
-package presentation
+package presentation.details
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -34,7 +34,7 @@ import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
-import model.Characters
+import data.model.Characters
 
 data class CharacterDetailsScreen(
     private val narutoCharacter: Characters
