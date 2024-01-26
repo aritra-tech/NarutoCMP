@@ -13,6 +13,7 @@ kotlinxSerializationJson = "1.6.2"
 ktorClientAndroid = "2.3.5"
 ktorClientContentNegotiation = "2.3.6"
 ktorClientCore = "2.3.7"
+mvvmCore = "0.16.1"
 
 [libraries]
 kamel-image = { module = "media.kamel:kamel-image", version.ref = "kamelImage" }
@@ -25,6 +26,8 @@ ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negoti
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorClientCore" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktorClientCore" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorClientCore" }
+mvvm-compose = { module = "dev.icerock.moko:mvvm-compose", version.ref = "mvvmCore" }
+mvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "mvvmCore" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
