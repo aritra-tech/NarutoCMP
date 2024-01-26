@@ -4,5 +4,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Naruto(
-    var characters: List<Characters>,
+    val characters: List<Characters>,
 )

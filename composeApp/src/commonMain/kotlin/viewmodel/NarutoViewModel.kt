@@ -10,6 +10,7 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 import model.Naruto
 
 class NarutoViewModel : ViewModel() {
@@ -27,7 +28,7 @@ class NarutoViewModel : ViewModel() {
         }
     }
 
-    private fun updateNarutoCharacters() = runIO {
+    private fun updateNarutoCharacters() = viewModelScope.launch {
         val narutoCharacters = getNarutoCharacters()
         _narutoUiState.update {
             it.copy(naruto = narutoCharacters)
