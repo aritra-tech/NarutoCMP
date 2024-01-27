@@ -1,4 +1,4 @@
-package presentation.home
+package ui.screen.home
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Arrangement
@@ -18,7 +18,7 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import component.CharacterCard
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
-import presentation.details.CharacterDetailsScreen
+import ui.screen.details.CharacterDetailsScreen
 import viewmodel.NarutoViewModel
 
 class HomeScreen : Screen {
