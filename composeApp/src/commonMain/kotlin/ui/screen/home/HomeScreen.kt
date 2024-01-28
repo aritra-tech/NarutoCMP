@@ -26,17 +26,20 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import component.CharacterCard
+import dev.icerock.moko.mvvm.compose.getViewModel
+import dev.icerock.moko.mvvm.compose.viewModelFactory
 import ui.screen.details.CharacterDetailsScreen
 import ui.theme.LocalUiModePreferenceController
 import ui.theme.UiMode
 import ui.theme.rememberUiMode
 import viewmodel.NarutoViewModel
 
-data class HomeScreen(val narutoViewModel: NarutoViewModel) : Screen {
+class HomeScreen : Screen {
 
     @Composable
     override fun Content() {
         val navigator = LocalNavigator.currentOrThrow
+        val narutoViewModel = getViewModel(Unit, viewModelFactory { NarutoViewModel() })
         val characterUiStateObserve by narutoViewModel.narutoUiState.collectAsState()
         val controller = LocalUiModePreferenceController.current
         val uiMode by rememberUiMode()
