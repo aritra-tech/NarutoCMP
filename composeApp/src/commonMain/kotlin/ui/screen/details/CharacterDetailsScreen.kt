@@ -47,7 +47,7 @@ data class CharacterDetailsScreen(
         Scaffold(
             topBar = {
                 TopAppBar(
-                    backgroundColor = Color.White,
+                    backgroundColor = Color.Black,
                     content = {
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
