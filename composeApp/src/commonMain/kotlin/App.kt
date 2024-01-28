@@ -1,11 +1,11 @@
-import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import cafe.adriel.voyager.navigator.Navigator
-import presentation.home.HomeScreen
+import ui.screen.home.HomeScreen
+import ui.theme.NarutoCMPTheme
 
 @Composable
 fun App() {
-    MaterialTheme {
+    NarutoCMPTheme {
         Navigator(HomeScreen())
     }
 }

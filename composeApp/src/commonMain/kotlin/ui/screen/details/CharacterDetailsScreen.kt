@@ -1,4 +1,4 @@
-package presentation.details
+package ui.screen.details
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -47,7 +47,7 @@ data class CharacterDetailsScreen(
         Scaffold(
             topBar = {
                 TopAppBar(
-                    backgroundColor = Color.White,
+                    backgroundColor = Color.Black,
                     content = {
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
