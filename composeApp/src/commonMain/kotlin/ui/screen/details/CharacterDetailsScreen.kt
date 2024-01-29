@@ -1,6 +1,5 @@
 package ui.screen.details
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -11,13 +10,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -39,6 +40,7 @@ import data.model.Characters
 data class CharacterDetailsScreen(
     private val narutoCharacter: Characters
 ) : Screen {
+    @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     override fun Content() {
 
@@ -47,23 +49,15 @@ data class CharacterDetailsScreen(
         Scaffold(
             topBar = {
                 TopAppBar(
-                    backgroundColor = Color.Black,
-                    content = {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.Start
+                    title = { Text(text = narutoCharacter.name) },
+                    colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent),
+                    navigationIcon = {
+                        IconButton(
+                            onClick = { navigator.pop() }
                         ) {
-                            IconButton(
-                                onClick = { navigator.pop() }
-                            ) {
-                                Icon(
-                                    imageVector = Icons.Rounded.ArrowBack,
-                                    contentDescription = "Back"
-                                )
-                            }
-                            Text(
-                                text = narutoCharacter.name,
-                                fontSize = 18.sp
+                            Icon(
+                                imageVector = Icons.Rounded.ArrowBack,
+                                contentDescription = "Back"
                             )
                         }
                     }

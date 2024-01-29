@@ -1,26 +1,27 @@
 package ui.screen.home
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.material.IconButton
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lightbulb
 import androidx.compose.material.icons.outlined.Lightbulb
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
@@ -36,6 +37,7 @@ import viewmodel.NarutoViewModel
 
 class HomeScreen : Screen {
 
+    @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     override fun Content() {
         val navigator = LocalNavigator.currentOrThrow
@@ -48,16 +50,15 @@ class HomeScreen : Screen {
             topBar = {
                 TopAppBar(
                     title = { Text("NarutoCMP") },
-                    backgroundColor = Color.Black,
+                    colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent),
                     actions = {
                         IconButton(onClick = controller::toggle) {
-                            Image(
+                            Icon(
                                 imageVector = when (uiMode) {
                                     UiMode.DARK -> Icons.Outlined.Lightbulb
                                     UiMode.LIGHT -> Icons.Default.Lightbulb
                                 },
                                 contentDescription = null,
-                                colorFilter = ColorFilter.tint(Color.White)
                             )
                         }
                     }
@@ -69,7 +70,10 @@ class HomeScreen : Screen {
                     columns = GridCells.Fixed(2),
                     horizontalArrangement = Arrangement.spacedBy(10.dp),
                     verticalArrangement = Arrangement.spacedBy(10.dp),
-                    modifier = Modifier.fillMaxSize().padding(16.dp),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(it)
+                        .padding(horizontal = 16.dp, vertical = 20.dp),
                     content = {
                         items(characterUiStateObserve.naruto.characters) { narutoCharacter ->
                             CharacterCard(
