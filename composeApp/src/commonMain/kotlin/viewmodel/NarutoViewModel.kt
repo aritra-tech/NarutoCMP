@@ -35,7 +35,7 @@ class NarutoViewModel : ViewModel() {
     }
     private suspend fun getNarutoCharacters(): Naruto {
         return httpClient
-            .get("https://mocki.io/v1/7045e412-4c60-4099-b787-910781aa2acc")
+            .get("https://mocki.io/v1/2af66ca9-dcab-4e26-b24f-bfc0c551b81d")
             .body<Naruto>()
     }
 }
