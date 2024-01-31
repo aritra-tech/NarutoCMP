@@ -1,7 +1,6 @@
 package ui.screen.details
 
 import Utils.getCharacteristics
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -91,7 +90,6 @@ data class CharacterDetailsScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(10.dp))
-                        .background(Color.White)
                         .border(
                             width = 1.dp,
                             color = Color(0xFFE3E6EE),
