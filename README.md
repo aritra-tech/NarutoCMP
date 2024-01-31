@@ -18,6 +18,12 @@ using **Jetpack Compose** 🚀.
 The network API is a dummy (fixed) response which is _statically hosted
 [here](https://mocki.io/v1/7045e412-4c60-4099-b787-910781aa2acc)_.
 
+### 📱 Preview
+
+Currently, the app looks like this on the both platforms i.e Android & iOS:
+
+https://github.com/aritra-tech/NarutoCMP/assets/80090908/cba0e53a-3f3b-4c39-867e-e57c87d92e65
+
 ## Built with 
 
 - [Kotlin](kotlinlang.org): Programming language
