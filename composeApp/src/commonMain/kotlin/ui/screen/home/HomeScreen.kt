@@ -40,7 +40,6 @@ import ui.screen.details.CharacterDetailsScreen
 import ui.theme.LocalUiModePreferenceController
 import ui.theme.UiMode
 import ui.theme.rememberUiMode
-import viewmodel.NarutoViewModel
 
 class HomeScreen : Screen {
 
@@ -48,7 +47,7 @@ class HomeScreen : Screen {
     @Composable
     override fun Content() {
         val navigator = LocalNavigator.currentOrThrow
-        val narutoViewModel = getViewModel(Unit, viewModelFactory { NarutoViewModel() })
+        val narutoViewModel = getViewModel(Unit, viewModelFactory { HomeViewModel() })
         val characterUiStateObserve by narutoViewModel.narutoUiState.collectAsState()
         val controller = LocalUiModePreferenceController.current
         val uiMode by rememberUiMode()
