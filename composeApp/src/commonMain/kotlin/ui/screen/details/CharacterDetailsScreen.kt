@@ -1,6 +1,6 @@
 package ui.screen.details
 
-import Utils.getCharacteristics
+import utils.Utils.getCharacteristics
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

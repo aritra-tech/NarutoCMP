@@ -1,3 +1,5 @@
+package utils
+
 import data.model.Characters
 
 object Utils {
