@@ -109,8 +109,19 @@ compose.desktop {
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "org.aritra.narutocmp"
+            packageName = "NarutoCMP"
+            description = "NarutoCMP - list of Naruto characters"
             packageVersion = "1.0.0"
+
+            macOS {
+                iconFile.set(rootProject.file("icons/naruto.icns"))
+            }
+            windows {
+                iconFile.set(rootProject.file("icons/naruto.ico"))
+            }
+            linux {
+                iconFile.set(rootProject.file("icons/naruto.png"))
+            }
         }
     }
 }
