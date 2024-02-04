@@ -1,4 +1,4 @@
-# ⾞ NarutoCMP (Kotlin Multiplatform Mobile)
+# ⾞ NarutoCMP (Compose Multiplatform Mobile)
 
 NarutoCMP is a simple and sample _mobile application_ built to demonstrate the use of
 _**Kotlin Multiplatform Mobile**_ for developing _Android, iOS and Desktop_ applications
@@ -16,7 +16,7 @@ using **Jetpack Compose** 🚀.
 - [x] Clean and Simple Material UI 🎨
 
 The network API is a dummy (fixed) response which is _statically hosted
-[here](https://mocki.io/v1/7045e412-4c60-4099-b787-910781aa2acc)_.
+[here](https://mocki.io/v1/2af66ca9-dcab-4e26-b24f-bfc0c551b81d)_.
 
 ### 📱 Preview
 
@@ -51,3 +51,33 @@ This is a Kotlin Multiplatform project targeting Android, iOS, Desktop.
 
 
 Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+
+## Contributing 
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details and the process.
+
+## License
+
+```
+MIT License
+
+Copyright (c) 2024 Aritra Das
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
