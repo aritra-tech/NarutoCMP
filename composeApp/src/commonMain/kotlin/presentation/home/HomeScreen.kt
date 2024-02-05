@@ -1,4 +1,4 @@
-package ui.screen.home
+package presentation.home
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.gestures.Orientation
@@ -32,14 +32,15 @@ import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import component.CharacterCard
+import presentation.component.CharacterCard
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
 import kotlinx.coroutines.launch
-import ui.screen.details.CharacterDetailsScreen
-import ui.theme.LocalUiModePreferenceController
-import ui.theme.UiMode
-import ui.theme.rememberUiMode
+import presentation.component.HomeScreenShimmer
+import presentation.details.CharacterDetailsScreen
+import theme.LocalUiModePreferenceController
+import theme.UiMode
+import theme.rememberUiMode
 
 class HomeScreen : Screen {
 
@@ -92,11 +93,18 @@ class HomeScreen : Screen {
                             }
                         ),
                     content = {
-                        items(characterUiStateObserve.naruto.characters) { narutoCharacter ->
-                            CharacterCard(
-                                character = narutoCharacter
-                            ) {
-                                navigator.push(CharacterDetailsScreen(narutoCharacter))
+                        if (characterUiStateObserve.naruto.characters.isEmpty())
+                        {
+                            repeat(12) {
+                                item { HomeScreenShimmer() }
+                            }
+                        } else {
+                            items(characterUiStateObserve.naruto.characters) { narutoCharacter ->
+                                CharacterCard(
+                                    character = narutoCharacter
+                                ) {
+                                    navigator.push(CharacterDetailsScreen(narutoCharacter))
+                                }
                             }
                         }
                     }
