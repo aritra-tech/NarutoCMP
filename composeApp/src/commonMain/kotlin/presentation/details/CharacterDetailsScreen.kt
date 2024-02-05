@@ -1,4 +1,4 @@
-package ui.screen.details
+package presentation.details
 
 import utils.Utils.getCharacteristics
 import androidx.compose.foundation.border
@@ -34,7 +34,7 @@ import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import component.CharacterAttrs
+import presentation.component.CharacterAttrs
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
 import data.model.Characters

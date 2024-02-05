@@ -1,4 +1,4 @@
-package ui.screen.home
+package presentation.home
 
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
 import io.ktor.client.HttpClient

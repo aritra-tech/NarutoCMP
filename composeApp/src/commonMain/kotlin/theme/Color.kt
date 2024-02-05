@@ -1,4 +1,4 @@
-package ui.theme
+package theme
 
 
 import androidx.compose.material3.darkColorScheme
