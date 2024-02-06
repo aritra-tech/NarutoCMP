@@ -1,4 +1,4 @@
-package ui.screen
+package presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -17,7 +17,7 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import kotlinx.coroutines.delay
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
-import ui.screen.home.HomeScreen
+import presentation.home.HomeScreen
 
 class SplashScreen : Screen {
 

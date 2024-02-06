@@ -1,4 +1,4 @@
-package component
+package presentation.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
