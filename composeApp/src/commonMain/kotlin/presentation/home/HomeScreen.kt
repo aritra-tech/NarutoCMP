@@ -1,6 +1,5 @@
 package presentation.home
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.draggable
 import androidx.compose.foundation.gestures.rememberDraggableState
@@ -74,7 +73,7 @@ class HomeScreen : Screen {
                 )
             }
         ) {
-            AnimatedVisibility(characterUiStateObserve.naruto.characters.isNotEmpty()) {
+            if(characterUiStateObserve.naruto.characters.isNotEmpty()) {
                 LazyVerticalGrid(
                     state = scrollState,
                     columns = GridCells.Fixed(2),
