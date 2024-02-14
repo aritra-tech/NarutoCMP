@@ -1,4 +1,4 @@
-package presentation.home
+package presentation.characters
 
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
 import io.ktor.client.HttpClient
@@ -13,9 +13,9 @@ import kotlinx.coroutines.launch
 import data.model.Naruto
 import utils.Constants.GET_NARUTO_CHARACTERS
 
-class HomeViewModel : ViewModel() {
+class NarutoViewModel : ViewModel() {
 
-    private val _narutoUiState = MutableStateFlow(HomeUiState())
+    private val _narutoUiState = MutableStateFlow(NarutoUiState())
     val narutoUiState = _narutoUiState.asStateFlow()
 
     init {
@@ -41,6 +41,6 @@ class HomeViewModel : ViewModel() {
     }
 }
 
-data class HomeUiState(
+data class NarutoUiState(
     val naruto : Naruto = Naruto(emptyList())
 )
